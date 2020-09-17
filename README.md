@@ -5,6 +5,12 @@ Low level api to program ATtiny85 Lilytiny at Arduino IDE 1.6.x
 
 ![schematics](digispark_lilytiny_china.png)
 
+This schematic does not able low current applications.
+
+* power led (3mA)
+* pullup resistor (1mA)
+* voltage regulator
+
 ## China Lilytiny ATtiny85 - power consumtion
 
 4.5V battery at 5V-pin:
