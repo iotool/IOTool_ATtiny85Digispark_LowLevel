@@ -34,7 +34,8 @@ Low level api to program ATtiny85 Lilytiny at Arduino IDE 1.6.x
 minimize current:
 
 * 17.05mA default @ 1 MHz cpu / 4.5V
-* 14.44mA remove power led (-2.61mA)
-* 13.99mA power_adc_disable (-0.45mA)
-* 11.99mA power_all_disable (-2.00mA)
-* 3.56mA sleep power down (-8.43mA)
+* 16.60mA power_adc_disable (-0.45mA)
+* 14.40mA power_all_disable (-2.00mA)
+* 6.19mA sleep power down (-8.21mA) 
+* 3.56mA remove power led (-2.63mA)
+* 1.88mA use vin-pin / 3.2V
