@@ -1,2 +1,40 @@
 # IOTool_ATtiny85lilytiny_LowLevel
 Low level api to program ATtiny85 Lilytiny at Arduino IDE 1.6.x
+
+## China Lilytiny ATtiny85 - schematic 
+
+![schematics](digispark_lilytiny_china.png)
+
+## China Lilytiny ATtiny85 - power consumtion
+
+4.5V battery at 5V-pin:
+
+* 17.05mA @ 1 MHz cpu
+* 12.95mA @ 500 kHz cpu
+* 11.02mA @ 250 kHz cpu
+* 9.46mA @ 125 kHz cpu
+* 8.69mA @ 62 kHz cpu
+* 8.20mA @ 31 kHz cpu
+* 7.65mA @ 15 kHz cpu
+* 7.56mA @ 8 kHz cpu
+* 7.55mA @ 4 kHz cpu
+
+3.2V dcdc / 4.5V battery at VIN-pin:
+
+* 10.10mA @ 1 MHz cpu
+* 7.41mA @ 500 kHz cpu
+* 6.12mA @ 250 kHz cpu
+* 5.18mA @ 125 kHz cpu
+* 4.68mA @ 62 kHz cpu
+* 4.41mA @ 31 kHz cpu
+* 4.17mA @ 15 kHz cpu
+* 4.12mA @ 8 kHz cpu
+* 4.11mA @ 4 kHz cpu
+
+minimize current:
+
+* 17.05mA default @ 1 MHz cpu / 4.5V
+* 14.44mA remove power led (-2.61mA)
+* 13.99mA power_adc_disable (-0.45mA)
+* 11.99mA power_all_disable (-2.00mA)
+* 3.56mA sleep power down (-8.43mA)
