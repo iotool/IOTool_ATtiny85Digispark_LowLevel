@@ -24,13 +24,22 @@
 
 #include <avr/io.h>          // low level pinmode
 #include <util/delay.h>      // low level delay
+#include <avr/interrupt.h>   // timer interrupt for sleep
+#define __AVR_ATtiny85__     // workaround Arduino IDE 1.6.8
+#include "iotool_attiny85lilytiny_sleep.h"
+#include <avr/sleep.h>       // sleep to reduce power
+#include <avr/wdt.h>
+#include <avr/power.h>
 
-#define CHANGE_CPU_1MHZ   cli();CLKPR=(1<<CLKPCE);CLKPR=0;sei(); // :1 17.05mA/4.5V 10.10mA/3.2V default 
-#define CHANGE_CPU_500KHZ cli();CLKPR=(1<<CLKPCE);CLKPR=1;sei(); // :2 12.95mA/4.5V  7.41mA/3.2V
-#define CHANGE_CPU_250KHZ cli();CLKPR=(1<<CLKPCE);CLKPR=2;sei(); // :4 11.02mA/4.5V  6.12mA/3.2V
-#define CHANGE_CPU_125KHZ cli();CLKPR=(1<<CLKPCE);CLKPR=3;sei(); // :8  9.46mA/4.5V  5.18mA/3.2V
-#define CHANGE_CPU_62KHZ  cli();CLKPR=(1<<CLKPCE);CLKPR=4;sei(); // :16 8.69mA/4.5V  4.68mA/3.2V
-#define CHANGE_CPU_31KHZ  cli();CLKPR=(1<<CLKPCE);CLKPR=5;sei(); // :32 8.20mA/4.5V  4.41mA/3.2V
+#define CHANGE_CPU_1MHZ   cli();CLKPR=(1<<CLKPCE);CLKPR=0;sei(); // :1  17.05mA/4.5V 10.10mA/3.2V default 
+#define CHANGE_CPU_500KHZ cli();CLKPR=(1<<CLKPCE);CLKPR=1;sei(); // :2  12.95mA/4.5V  7.41mA/3.2V
+#define CHANGE_CPU_250KHZ cli();CLKPR=(1<<CLKPCE);CLKPR=2;sei(); // :4  11.02mA/4.5V  6.12mA/3.2V
+#define CHANGE_CPU_125KHZ cli();CLKPR=(1<<CLKPCE);CLKPR=3;sei(); // :8   9.46mA/4.5V  5.18mA/3.2V
+#define CHANGE_CPU_62KHZ  cli();CLKPR=(1<<CLKPCE);CLKPR=4;sei(); // :16  8.69mA/4.5V  4.68mA/3.2V
+#define CHANGE_CPU_31KHZ  cli();CLKPR=(1<<CLKPCE);CLKPR=5;sei(); // :32  8.20mA/4.5V  4.41mA/3.2V
+#define CHANGE_CPU_16KHZ  cli();CLKPR=(1<<CLKPCE);CLKPR=6;sei(); // :64  7.65mA/4.5V  4.17mA/3.2V
+#define CHANGE_CPU_8KHZ   cli();CLKPR=(1<<CLKPCE);CLKPR=7;sei(); // :128 7.56mA/4.5V  4.12mA/3.2V
+#define CHANGE_CPU_4KHZ   cli();CLKPR=(1<<CLKPCE);CLKPR=8;sei(); // :256 7.55mA/4.5V  4.11mA/3.2V
 
 // pinMode(PBx,INPUT/OUTPUT)
 #define PINMODE_PB0_INPUT   DDRB &= ~(1 << PB0)
