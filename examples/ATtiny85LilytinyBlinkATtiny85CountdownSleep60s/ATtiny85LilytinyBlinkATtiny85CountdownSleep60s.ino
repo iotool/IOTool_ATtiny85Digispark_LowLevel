@@ -4,7 +4,7 @@
 // Turn on pb4 und pb1 at the end of countdown.
 // Current usage 6.9mA*4000ms + 11.2mA*900ms + 18mA*100ms = 7.9mA
 // 
-// 250 Byte (4% of 6.012) / RAM 4 Byte
+// 384 Byte (6% of 6.012) / RAM 2 Byte
 
 #include "iotool_attiny85lilytiny_lowlevel.h"
 
