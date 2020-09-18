@@ -1,5 +1,5 @@
-# IOTool_ATtiny85lilytiny_LowLevel
-Low level api to program ATtiny85 Lilytiny at Arduino IDE 1.6.x
+# IOTool_ATtiny85Digispark_LowLevel
+Low level api to program ATtiny85 Digispark and Lilytiny at Arduino IDE 1.6.x
 
 ## China Lilytiny ATtiny85 - schematic 
 
