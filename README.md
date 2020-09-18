@@ -45,3 +45,12 @@ minimize current:
 * 6.19mA sleep power down (-8.21mA) 
 * 3.56mA remove power led (-2.63mA)
 * 1.88mA use vin-pin / 3.2V
+
+## China Digispark Kickstart ATtiny85
+
+This board is also an implementation of the circuit from Digispark. As with the Lilytiny, different resistors are used. Instead of the 1500 Ohm resistor, 1000 Ohm are used, probably to optimize the assembly in production. Thus the kickstarter board has a higher consumption than the Lilytiny.  
+
+4.5V at 5V-pin (4.5V at VIN-pin)
+
+* 18.4 mA (9.7mA) idle 
+* 7.4 mA (2.8mA) sleep
