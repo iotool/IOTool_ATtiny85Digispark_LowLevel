@@ -23,7 +23,7 @@ void loop() {
   /*--- open execute dialog ---*/
   DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT); // Windows+R
   DigiKeyboardNext();
-  /*--- run powershell ---*/
+  /*--- run notepad (wait 5 seconds to witch to excel) ---*/
   DigiKeyboard.print("notepad");
   DigiKeyboard.delay(500);
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
