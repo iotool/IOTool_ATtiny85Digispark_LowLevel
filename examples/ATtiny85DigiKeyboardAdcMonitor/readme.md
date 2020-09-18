@@ -11,3 +11,8 @@ Connected with 10k resistor:
 * connect 5V to PB2 [100..118]
 * connect GND to PB2 [136..163]
 
+## Oscilloscope for Excel
+
+You don't need any extra software to capture analog messures, because the data are send as keyboard input.
+
+After plug in to USB port your Windows computer starts notepad. Now you can switch to Excel or wait until data will logged. To stop the process remove the device.
