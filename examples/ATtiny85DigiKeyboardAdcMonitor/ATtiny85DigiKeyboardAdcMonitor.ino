@@ -7,7 +7,7 @@
 // PB1 digitalRead
 // PB2 analogRead
 // PB5 analogRead
-// GAP floating by buildin led and pb5/gnd touch
+// GAP floating by buildin led and pb5/gnd or pb5/pb4/pb3 touch
 // BTN (N)one (D)ark (T)ouch (U)ndefined
 
 #include "DigiKeyboard.h"
@@ -78,7 +78,8 @@ void loop() {
     // Use buildin led for floating between LO and HI
     // The measured value of adc0 is influenced by the fluctuation.
     // Covering the built-in LED increases the fluctuation.
-    // Touching PB5 and GND increases the fluctuation very much.
+    // Touching PB5 and GND increases the fluctuation very much (Lilytiny).
+    // Touch is also detected for pins PB5 and PB4 / PB3.
     adcBuffer[2] = adcBuffer[0];
     adcBuffer[3] = adcBuffer[1];
     // set PB1 to ground
@@ -121,7 +122,7 @@ void loop() {
     // darkness - covered LED
     DigiKeyboard.print(F("D"));
   } else if ((gap>=800) && (gap<=4000)) {
-    // touch - PB5 and GND touched with the finger
+    // touch - touch PB5 and GND with finger
     DigiKeyboard.print(F("T"));
   } else {
     // undefined - no clear assignment
@@ -129,5 +130,16 @@ void loop() {
   }
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   // DigiKeyboardNext();
-  DigiKeyboard.delay(84);
+  if ((gap>=800) && (gap<=4000)) {
+    // Built-in LED flashes weakly when touch sensor is detected.
+    // Uses the internal pullup resistor of 25k ohm.
+    pinMode(1,INPUT_PULLUP);    
+    DigiKeyboard.delay(70);
+    pinMode(1,OUTPUT);    
+    digitalWrite(1,LOW);
+    pinMode(1,INPUT);    
+    DigiKeyboard.delay(14);
+  } else {
+    DigiKeyboard.delay(84);
+  }
 }
