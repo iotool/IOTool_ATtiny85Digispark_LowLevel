@@ -1,10 +1,12 @@
 
+// work in progesss - DOES NOT RUNING !!!
+// 
 // #define __AVR_ATtiny85__
 // #include "DigiSleep.h"
 // #include "DigiKeyboardMouse.h"                  // qwerty (2.484 Byte)
 // 
-// gRebootMemory.mode = REBOOT_MODE_KEYBOARD;
-// gRebootMemory.mode = REBOOT_MODE_MOUSE;
+// gRebootMemory.next = REBOOT_MODE_KEYBOARD;
+// gRebootMemory.next = REBOOT_MODE_MOUSE;
 
 /* --- define mode --- */
 
