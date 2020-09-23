@@ -14,15 +14,18 @@ void delayTrinket(uint16_t ms);
 uint8_t ledStatePrev;
 
 void setup() {
-  // start the USB device engine and enumerate
-  TrinketHidCombo.begin();
-  // blink on start
+  // buildin led on
   pinMode(BUILDIN_LED,OUTPUT);
   digitalWrite(BUILDIN_LED,HIGH);
-  delayTrinket(100); 
+  // start the USB device engine and enumerate
+  TrinketHidCombo.begin();
+  // keep buildin led on, if not connected
+  while(!TrinketHidCombo.isConnected()) {
+    delayTrinket(100);
+  }
+  // buildin led off, if connected
   digitalWrite(BUILDIN_LED,LOW);
-  delayTrinket(900);
-  // get initial state
+  delayTrinket(900); 
   ledStatePrev = TrinketHidCombo.getLEDstate();
 }
 
