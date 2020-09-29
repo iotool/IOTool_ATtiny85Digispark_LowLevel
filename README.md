@@ -63,4 +63,8 @@ This board is also an implementation of the circuit from Digispark. As with the 
 * update new version run micronucleus --run upgrade-t85_default.hex
 * modify upload.maximum_size at Arduino15\packages\digistump\hardware\avr\1.6.7\boards.txt
 
+advantage of 2.04 vs 1.6
 
+* smaller size / 510 byte more upload size (6522 vs 6012)
+* obustness improvements, such as compatibility to USB hubs
+* bugfix device error after computer sleep resume 
