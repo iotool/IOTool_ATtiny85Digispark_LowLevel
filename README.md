@@ -61,5 +61,6 @@ This board is also an implementation of the circuit from Digispark. As with the 
 * copy upgrade-t85_default.hex from micronucleus\upgrade\releases\ to ..\..\commandline
 * check current version run  micronucleus.exe /?
 * update new version run micronucleus --run upgrade-t85_default.hex
+* modify upload.maximum_size at Arduino15\packages\digistump\hardware\avr\1.6.7\boards.txt
 
 
