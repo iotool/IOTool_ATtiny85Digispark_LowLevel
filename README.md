@@ -54,3 +54,12 @@ This board is also an implementation of the circuit from Digispark. As with the 
 
 * 18.4 mA (9.7mA) idle 
 * 7.4 mA (2.8mA) sleep
+
+## Check and update Micronucleus bootloader 
+
+* download and extract ZIP from https://github.com/micronucleus/micronucleus
+* copy upgrade-t85_default.hex from micronucleus\upgrade\releases\ to ..\..\commandline
+* check current version run  micronucleus.exe /?
+* update new version run micronucleus --run upgrade-t85_default.hex
+
+
