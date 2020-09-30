@@ -125,7 +125,7 @@ void loop() {
       Trinket_releaseKey();
       Trinket_delay10ms(150);
       
-      // edit location url
+      // edit location url (Android)
       TrinketHidCombo.pressKey(KEYCODE_MOD_LEFT_CONTROL,KEYCODE_L);
       Trinket_releaseKey();
       Trinket_delay10ms(150);
