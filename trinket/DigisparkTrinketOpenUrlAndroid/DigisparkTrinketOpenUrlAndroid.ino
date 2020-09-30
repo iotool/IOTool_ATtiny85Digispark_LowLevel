@@ -1,6 +1,6 @@
 // DigisparkTrinketOpenUrlAndroid.ino
 // 
-// Open www.google.de and create favorite (Linux, MacOS, Windows, Android)
+// Open www.google.com and create favorite (Linux, MacOS, Windows, Android)
 // 
 // 4468 Byte (68%) ROM / 94 Byte SRAM
 
