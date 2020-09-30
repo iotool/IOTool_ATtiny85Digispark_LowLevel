@@ -81,6 +81,7 @@ void loop() {
   DigiKeyboard.delay(500);
 
   // end of script
+  digitalWrite(1,LOW);
   while(1) {
     DigiKeyboard.delay(10);
   }
