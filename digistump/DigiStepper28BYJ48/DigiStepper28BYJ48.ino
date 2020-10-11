@@ -8,6 +8,9 @@
 // 5V  = 5+
 // 
 // 15 u/min (12x 629us delay = 7,548ms delay/loop)
+// Gewinde M6 = 1,00mm/u = 10u/cm (40s/cm)
+// Gewinde M7 = 1,00mm/u = 10u/cm (40s/cm)
+// Gewinde M8 = 1,25mm/u =  8u/cm (32s/cm)
 
 #include <util/delay.h>
 
